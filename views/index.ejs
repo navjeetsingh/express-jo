@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!--we are not getting the absolute folder path is because we have the server.js injecting the public folder to the page, so we just have to call the subfolder from the public and the css file-->
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <h1>Fruits Index Page</h1>
+    <ul>
+      <!-- ejs % this how we do js -->
+      <% for(
+      let i=0;
+      i < Fruits.length;
+      i++) {
+         %>
+        <li><a href="/<%= i %>"><%= Fruits[i].name %></a></li>
+        <!-- the link here is base on the loop, since the loop already gives us the index number-->
+      <% } %>
+    </ul>
+  </body>
+</html>
